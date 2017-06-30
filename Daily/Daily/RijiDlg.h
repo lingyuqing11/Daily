@@ -1,4 +1,6 @@
 #pragma once
+#include "afxcmn.h"
+#include "afxdtctl.h"
 
 
 // CRijiDlg ¶Ô»°¿ò
@@ -24,4 +26,8 @@ public:
 	afx_msg void OnLbnSelchangeList1();
 	afx_msg void OnLvnItemchangedList2(NMHDR *pNMHDR, LRESULT *pResult);
 	afx_msg void OnBnClickedButton2();
+	CListCtrl m_list;
+	afx_msg void OnBnClickedButton1();
+	afx_msg void OnDtnDatetimechangeDatetimepicker1(NMHDR *pNMHDR, LRESULT *pResult);
+	CDateTimeCtrl m_DateCtrl;
 };
