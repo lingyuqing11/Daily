@@ -1,0 +1,46 @@
+﻿生成启动时间为 2017/6/30 15:47:13。
+     1>项目“C:\Users\hust\Desktop\Daily\Daily\Daily\Daily\Daily.vcxproj”在节点 2 上(build 个目标)。
+     1>InitializeBuildStatus:
+         正在创建“Debug\Daily.unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+       ClCompile:
+         所有输出均为最新。
+         C:\Program Files\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _WINDOWS /D _DEBUG /D _MBCS /D _AFXDLL /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"StdAfx.h" /Fp"Debug\Daily.pch" /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt Daily.cpp DailyDlg.cpp EditDiaryDlg.cpp HelpDlg.cpp MusicDlg.cpp RijiDlg.cpp ScheduleDlg.cpp
+         ScheduleDlg.cpp
+         DailyDlg.cpp
+         正在生成代码...
+         正在编译...
+         RijiDlg.cpp
+         MusicDlg.cpp
+         HelpDlg.cpp
+         EditDiaryDlg.cpp
+         Daily.cpp
+         正在生成代码...
+       ResourceCompile:
+         C:\Program Files\Microsoft SDKs\Windows\v7.0A\bin\rc.exe /D _DEBUG /D _AFXDLL /l"0x0804" /IDebug\ /nologo /fo"Debug\Daily.res" Daily.rc 
+       ManifestResourceCompile:
+         所有输出均为最新。
+       Link:
+         C:\Program Files\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\hust\Desktop\Daily\Daily\Daily\Debug\Daily.exe" /INCREMENTAL /NOLOGO /MANIFEST /ManifestFile:"Debug\Daily.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Users\hust\Desktop\Daily\Daily\Daily\Debug\Daily.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\hust\Desktop\Daily\Daily\Daily\Debug\Daily.lib" /MACHINE:X86 Debug\Daily.res
+         Debug\Daily.exe.embed.manifest.res
+         Debug\Daily.obj
+         Debug\DailyDlg.obj
+         Debug\EditDiaryDlg.obj
+         Debug\HelpDlg.obj
+         Debug\MusicDlg.obj
+         Debug\RijiDlg.obj
+         Debug\ScheduleDlg.obj
+         Debug\stdafx.obj
+       Manifest:
+         C:\Program Files\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /out:"Debug\Daily.exe.embed.manifest" /manifest Debug\Daily.exe.intermediate.manifest "C:\Program Files\Microsoft Visual Studio 10.0\VC\Include\Manifest\dpiaware.manifest"
+         所有输出均为最新。
+       LinkEmbedManifest:
+         所有输出均为最新。
+         Daily.vcxproj -> C:\Users\hust\Desktop\Daily\Daily\Daily\Debug\Daily.exe
+       FinalizeBuildStatus:
+         正在删除文件“Debug\Daily.unsuccessfulbuild”。
+         正在对“Debug\Daily.lastbuildstate”执行 Touch 任务。
+     1>已完成生成项目“C:\Users\hust\Desktop\Daily\Daily\Daily\Daily\Daily.vcxproj”(build 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:02.05
