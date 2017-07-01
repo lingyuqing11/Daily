@@ -1,4 +1,5 @@
 #pragma once
+#include "afxwin.h"
 
 
 // CHelpDlg 对话框
@@ -15,7 +16,10 @@ public:
 	enum { IDD = IDD_HELP };
 
 protected:
+	virtual BOOL OnInitDialog();
+	HICON m_hIcon;
 	virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV 支持
-
 	DECLARE_MESSAGE_MAP()
+public:
+	CStatic picture;
 };

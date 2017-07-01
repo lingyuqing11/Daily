@@ -12,6 +12,31 @@
 
 IMPLEMENT_DYNAMIC(CRijiDlg, CDialogEx)
 
+
+BOOL CRijiDlg::OnInitDialog()
+{
+	CDialogEx::OnInitDialog();
+
+	// 将“关于...”菜单项添加到系统菜单中。
+
+	// IDM_ABOUTBOX 必须在系统命令范围内。
+	ASSERT((IDM_ABOUTBOX & 0xFFF0) == IDM_ABOUTBOX);
+	ASSERT(IDM_ABOUTBOX < 0xF000);
+
+
+	// 设置此对话框的图标。当应用程序主窗口不是对话框时，框架将自动
+	//  执行此操作
+	SetIcon(m_hIcon, TRUE);			// 设置大图标
+	SetIcon(m_hIcon, FALSE);		// 设置小图标
+
+
+	CRect rect;
+	mylist.GetClientRect(&rect);
+	mylist.SetExtendedStyle(mylist.GetExtendedStyle() | LVS_EX_FULLROWSELECT | LVS_EX_GRIDLINES);//具有线条--------
+	mylist.InsertColumn(1, _T("标题"), LVCFMT_CENTER, rect.Width());
+	return TRUE;  // 除非将焦点设置到控件，否则返回 TRUE
+}
+
 CRijiDlg::CRijiDlg(CWnd* pParent /*=NULL*/)
 	: CDialogEx(CRijiDlg::IDD, pParent)
 {
@@ -25,7 +50,7 @@ CRijiDlg::~CRijiDlg()
 void CRijiDlg::DoDataExchange(CDataExchange* pDX)
 {
 	CDialogEx::DoDataExchange(pDX);
-	DDX_Control(pDX, IDC_LIST2, m_list);
+	DDX_Control(pDX, IDC_LIST2, mylist);
 	DDX_Control(pDX, IDC_DATETIMEPICKER1, m_DateCtrl);
 }
 
@@ -36,8 +61,8 @@ BEGIN_MESSAGE_MAP(CRijiDlg, CDialogEx)
 	ON_LBN_SELCHANGE(IDC_LIST1, &CRijiDlg::OnLbnSelchangeList1)
 	ON_NOTIFY(LVN_ITEMCHANGED, IDC_LIST2, &CRijiDlg::OnLvnItemchangedList2)
 	ON_BN_CLICKED(IDC_BUTTON2, &CRijiDlg::OnBnClickedButton2)
-	ON_BN_CLICKED(IDC_BUTTON1, &CRijiDlg::OnBnClickedButton1)
 	ON_NOTIFY(DTN_DATETIMECHANGE, IDC_DATETIMEPICKER1, &CRijiDlg::OnDtnDatetimechangeDatetimepicker1)
+	ON_BN_CLICKED(IDC_BUTTON1, &CRijiDlg::OnBnClickedButton1)
 END_MESSAGE_MAP()
 
 
@@ -80,14 +105,14 @@ void CRijiDlg::OnLvnItemchangedList2(NMHDR *pNMHDR, LRESULT *pResult)
 	NMLISTVIEW *pnml = (NMLISTVIEW*)pNMHDR; //访问由pNMHDR作为第一个结构体的扩展结构
 	if (-1 != pnml->iItem) //如果获取到了该结构
 	{
-		str = m_list.GetItemText(pnml->iItem, 0); //获取选中行的第二列内容，送入str																		  //this->SetDlgItemText(IDC_STATIC2, str);   //设置id为IDC_EDIT1的文本框内容为str
+		str = mylist.GetItemText(pnml->iItem, 0); //获取选中行的第二列内容，送入str																		  //this->SetDlgItemText(IDC_STATIC2, str);   //设置id为IDC_EDIT1的文本框内容为str
 	}
 	if (str == "")
 		return;
 	else
 	{
 		SetDlgItemText(IDC_EDIT3, str);
-		CString fileName = str + ".txt";
+		CString fileName = "Diary/" + str + ".txt";
 
 		CFile fFile(fileName, CFile::modeReadWrite);
 		CStringA strFile;
@@ -108,33 +133,7 @@ void CRijiDlg::OnBnClickedButton2()
 	// TODO: 在此添加控件通知处理程序代码
 }
 
-
-
-void CRijiDlg::OnBnClickedButton1()
-{
-	// TODO: 在此添加控件通知处理程序代码
-	CString strText(_T(""));
-	CString strTitle(_T(""));
-	GetDlgItemText(IDC_EDIT4, strText);
-	GetDlgItemText(IDC_EDIT3, strTitle);
-	try
-	{
-		CStdioFile file;
-		CString fileName;
-		fileName = strTitle + ".txt";
-		file.Open(fileName, CFile::modeWrite);
-		file.WriteString(strText);
-		file.Flush();
-		file.Close();
-	}
-	catch (CFileException* e)
-	{
-		e->ReportError();
-		e->Delete();
-	}
-}
-
-CString DataDeleteZero(CString DATA)
+CString CRijiDlg::DataDeleteZero(CString DATA)
 {
 	CString strMonth, strDay, strYear;
 	int year = 0, month = 0, day = 0;
@@ -159,8 +158,32 @@ void CRijiDlg::OnDtnDatetimechangeDatetimepicker1(NMHDR *pNMHDR, LRESULT *pResul
 	CTime time;
 	m_DateCtrl.GetTime(time);
 	CString strTime = time.Format("%Y/%m/%d");
-
 	strTime = DataDeleteZero(strTime);
 
 	*pResult = 0;
+}
+
+
+void CRijiDlg::OnBnClickedButton1()
+{
+	// TODO: 在此添加控件通知处理程序代码
+	CString strText(_T(""));
+	CString strTitle(_T(""));
+	GetDlgItemText(IDC_EDIT4, strText);
+	GetDlgItemText(IDC_EDIT3, strTitle);
+	try
+	{
+		CStdioFile file;
+		CString fileName;
+		fileName = "Diary/" + strTitle + ".txt";
+		file.Open(fileName, CFile::modeWrite);
+		file.WriteString(strText);
+		file.Flush();
+		file.Close();
+	}
+	catch (CFileException* e)
+	{
+		e->ReportError();
+		e->Delete();
+	}
 }

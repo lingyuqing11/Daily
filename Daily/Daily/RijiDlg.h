@@ -18,6 +18,9 @@ public:
 
 protected:
 	virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV Ö§³Ö
+    virtual BOOL OnInitDialog();
+	HICON m_hIcon;
+
 
 	DECLARE_MESSAGE_MAP()
 public:
@@ -26,8 +29,9 @@ public:
 	afx_msg void OnLbnSelchangeList1();
 	afx_msg void OnLvnItemchangedList2(NMHDR *pNMHDR, LRESULT *pResult);
 	afx_msg void OnBnClickedButton2();
-	CListCtrl m_list;
-	afx_msg void OnBnClickedButton1();
+	CListCtrl mylist;
 	afx_msg void OnDtnDatetimechangeDatetimepicker1(NMHDR *pNMHDR, LRESULT *pResult);
 	CDateTimeCtrl m_DateCtrl;
+	CString DataDeleteZero(CString DATA);
+	afx_msg void OnBnClickedButton1();
 };

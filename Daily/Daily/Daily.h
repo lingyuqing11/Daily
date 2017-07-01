@@ -19,11 +19,13 @@ class CDailyApp : public CWinApp
 {
 public:
 	CDailyApp();
-
+public:
+	CString str = "";
+	CStringA strFile;
 // ÷ÿ–¥
 public:
 	virtual BOOL InitInstance();
-
+	_ConnectionPtr m_pConnection;
 //  µœ÷
 
 	DECLARE_MESSAGE_MAP()
