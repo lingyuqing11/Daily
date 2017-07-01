@@ -103,6 +103,15 @@
     <None Include="res\排序 (1).ico">
       <Filter>资源文件</Filter>
     </None>
+    <None Include="res\bitmap1.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\57z58PIC6d5.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\日用百货节庆礼品.ico">
+      <Filter>资源文件</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Daily.h">
@@ -135,6 +144,12 @@
     <ClInclude Include="ScheduleDlg.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="HolidayDlg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="SaveDiary.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Daily.cpp">
@@ -159,6 +174,12 @@
       <Filter>资源文件\源文件</Filter>
     </ClCompile>
     <ClCompile Include="ScheduleDlg.cpp">
+      <Filter>资源文件\源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="HolidayDlg.cpp">
+      <Filter>资源文件\源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="SaveDiary.cpp">
       <Filter>资源文件\源文件</Filter>
     </ClCompile>
   </ItemGroup>

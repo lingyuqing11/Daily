@@ -1,11 +1,15 @@
-﻿  EditDiaryDlg.cpp
-  正在生成代码...
-  正在跳过...(未检测到相关更改)
+﻿  stdafx.cpp
   ScheduleDlg.cpp
+  SaveDiary.cpp
   RijiDlg.cpp
+c:\users\zhang\desktop\daily\daily\daily\rijidlg.cpp(119): warning C4244: “参数”: 从“ULONGLONG”转换到“int”，可能丢失数据
+c:\users\zhang\desktop\daily\daily\daily\rijidlg.cpp(119): warning C4244: “参数”: 从“ULONGLONG”转换到“UINT”，可能丢失数据
   MusicDlg.cpp
+  HolidayDlg.cpp
   HelpDlg.cpp
+  EditDiaryDlg.cpp
   DailyDlg.cpp
   Daily.cpp
+  正在生成代码...
   Daily.vcxproj -> C:\Users\zhang\Desktop\Daily\Daily\Debug\Daily.exe
   Daily.vcxproj -> C:\Users\zhang\Desktop\Daily\Daily\Debug\Daily.pdb (Partial PDB)

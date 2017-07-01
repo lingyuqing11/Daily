@@ -39,9 +39,20 @@ CDailyApp theApp;
 
 BOOL CDailyApp::InitInstance()
 {
-	AfxEnableControlContainer();
+	AfxEnableControlContainer();  //初始化ADO库环境
 	AfxOleInit();
 
+	m_pConnection.CreateInstance(_uuidof(Connection));
+      try
+	{
+		//打开本地数据库student.mdb
+		m_pConnection->Open("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=database.MDB","","",adModeUnknown);
+		//database.MDB为数据库名
+	}
+	catch(_com_error e)
+	{
+		AfxMessageBox("数据库连接失败",0);
+	}
 	// 如果一个运行在 Windows XP 上的应用程序清单指定要
 	// 使用 ComCtl32.dll 版本 6 或更高版本来启用可视化方式，
 	//则需要 InitCommonControlsEx()。否则，将无法创建窗口。

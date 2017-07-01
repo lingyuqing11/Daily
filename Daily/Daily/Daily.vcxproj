@@ -98,7 +98,9 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <None Include="ReadMe.txt" />
+    <None Include="res\57z58PIC6d5.bmp" />
     <None Include="res\beijing.bmp" />
+    <None Include="res\bitmap1.bmp" />
     <None Include="res\bitmap2.bmp" />
     <None Include="res\bitmap6.bmp" />
     <None Include="res\Daily.ico" />
@@ -120,6 +122,7 @@
     <None Include="res\主页.ico" />
     <None Include="res\帮助.ico" />
     <None Include="res\排序 (1).ico" />
+    <None Include="res\日用百货节庆礼品.ico" />
     <None Include="res\日程 (2).ico" />
     <None Include="res\时间排序.ico" />
     <None Include="res\记事本.ico" />
@@ -133,9 +136,11 @@
     <ClInclude Include="DailyDlg.h" />
     <ClInclude Include="EditDiaryDlg.h" />
     <ClInclude Include="HelpDlg.h" />
+    <ClInclude Include="HolidayDlg.h" />
     <ClInclude Include="MusicDlg.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="RijiDlg.h" />
+    <ClInclude Include="SaveDiary.h" />
     <ClInclude Include="ScheduleDlg.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
@@ -145,8 +150,10 @@
     <ClCompile Include="DailyDlg.cpp" />
     <ClCompile Include="EditDiaryDlg.cpp" />
     <ClCompile Include="HelpDlg.cpp" />
+    <ClCompile Include="HolidayDlg.cpp" />
     <ClCompile Include="MusicDlg.cpp" />
     <ClCompile Include="RijiDlg.cpp" />
+    <ClCompile Include="SaveDiary.cpp" />
     <ClCompile Include="ScheduleDlg.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
